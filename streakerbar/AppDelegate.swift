@@ -5,6 +5,12 @@
 //  Created by Chase Southard on 3/22/15.
 //  Copyright (c) 2015 Chase Southard. All rights reserved.
 //
+//
+// NEEDS:
+// - func: reads config possibly [github] from ~/.gitconfig
+// - func: pulls user contributions from https://github.com/users/:username/contributions
+// inspiration: https://github.com/akerl/githubstats/blob/master/lib/githubstats.rb
+
 
 import Cocoa
 
