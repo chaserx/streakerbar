@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
+        read_gitconfig()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -48,6 +49,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func randShit() {
         updateTitle(String(arc4random_uniform(10)))
+    }
+    
+    func read_gitconfig(){
+        let path = "~/.gitconfig"
+        let location = path.stringByExpandingTildeInPath
+        let data: NSData? = NSData(contentsOfFile: location)
+        
+        if let fileData = data {
+            let content = NSString(data: fileData, encoding:NSUTF8StringEncoding) as String
+            println(content) // great, now how to grab github username?
+        }
     }
     
 }
