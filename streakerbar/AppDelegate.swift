@@ -7,8 +7,9 @@
 //
 //
 // NEEDS:
-// - func: reads config possibly [github] from ~/.gitconfig
+// - func: reads config possibly [github] from ~/.gitconfig or from NSUserDefaults
 // - func: pulls user contributions from https://github.com/users/:username/contributions
+// - func: updates statusItem.title on interval
 // inspiration: https://github.com/akerl/githubstats/blob/master/lib/githubstats.rb
 
 
