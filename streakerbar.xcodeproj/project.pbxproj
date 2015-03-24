@@ -11,6 +11,11 @@
 		AB7512FD1ABF8CF70028A206 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB7512FC1ABF8CF70028A206 /* Images.xcassets */; };
 		AB7513001ABF8CF70028A206 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7512FE1ABF8CF70028A206 /* MainMenu.xib */; };
 		AB75130C1ABF8CF80028A206 /* streakerbarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB75130B1ABF8CF80028A206 /* streakerbarTests.swift */; };
+		E227BC5C1AC10DFF00EC096F /* GHEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227BC5B1AC10DFF00EC096F /* GHEvent.swift */; };
+		E227BC5E1AC11C8C00EC096F /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = E227BC5D1AC11C8C00EC096F /* Async.swift */; };
+		E29A89FB1AC12B1100514770 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A89FA1AC12B1100514770 /* Operators.swift */; };
+		E29A89FD1AC12E6C00514770 /* GHFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A89FC1AC12E6C00514770 /* GHFetcher.swift */; };
+		E29A89FF1AC1326600514770 /* NSDate+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A89FE1AC1326600514770 /* NSDate+JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,11 @@
 		AB7513051ABF8CF80028A206 /* streakerbarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = streakerbarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB75130A1ABF8CF80028A206 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB75130B1ABF8CF80028A206 /* streakerbarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = streakerbarTests.swift; sourceTree = "<group>"; };
+		E227BC5B1AC10DFF00EC096F /* GHEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHEvent.swift; sourceTree = "<group>"; };
+		E227BC5D1AC11C8C00EC096F /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		E29A89FA1AC12B1100514770 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		E29A89FC1AC12E6C00514770 /* GHFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHFetcher.swift; sourceTree = "<group>"; };
+		E29A89FE1AC1326600514770 /* NSDate+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,11 @@
 			isa = PBXGroup;
 			children = (
 				AB7512FA1ABF8CF70028A206 /* AppDelegate.swift */,
+				E227BC5B1AC10DFF00EC096F /* GHEvent.swift */,
+				E29A89FE1AC1326600514770 /* NSDate+JSON.swift */,
+				E29A89FC1AC12E6C00514770 /* GHFetcher.swift */,
+				E227BC5D1AC11C8C00EC096F /* Async.swift */,
+				E29A89FA1AC12B1100514770 /* Operators.swift */,
 				AB7512FC1ABF8CF70028A206 /* Images.xcassets */,
 				AB7512FE1ABF8CF70028A206 /* MainMenu.xib */,
 				AB7512F81ABF8CF70028A206 /* Supporting Files */,
@@ -206,6 +221,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB7512FB1ABF8CF70028A206 /* AppDelegate.swift in Sources */,
+				E29A89FB1AC12B1100514770 /* Operators.swift in Sources */,
+				E227BC5E1AC11C8C00EC096F /* Async.swift in Sources */,
+				E29A89FD1AC12E6C00514770 /* GHFetcher.swift in Sources */,
+				E29A89FF1AC1326600514770 /* NSDate+JSON.swift in Sources */,
+				E227BC5C1AC10DFF00EC096F /* GHEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +413,7 @@
 				AB7513111ABF8CF80028A206 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB7513121ABF8CF80028A206 /* Build configuration list for PBXNativeTarget "streakerbarTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +422,7 @@
 				AB7513141ABF8CF80028A206 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
