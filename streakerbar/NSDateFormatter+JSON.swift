@@ -8,14 +8,14 @@
 
 import Foundation
 
-extension NSDate {
+extension NSDateFormatter {
 
-	class func dateWithJSONString(string: String) -> NSDate? {
+	class func dateFromJSONString(string: String) -> NSDate? {
 		return JSONDateFormatter.dateFromString(string)
 	}
 
-	var JSONString: String {
-		return NSDate.JSONDateFormatter.stringFromDate(self)
+	class func JSONStringFromDate(date: NSDate) -> String {
+		return JSONDateFormatter.stringFromDate(date)
 	}
 
 	private class var JSONDateFormatter: NSDateFormatter {

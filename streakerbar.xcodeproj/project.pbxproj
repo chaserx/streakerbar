@@ -16,7 +16,7 @@
 		E24EB6F61AC2638E00393151 /* GHInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EB6F51AC2638E00393151 /* GHInteractor.swift */; };
 		E29A89FB1AC12B1100514770 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A89FA1AC12B1100514770 /* Operators.swift */; };
 		E29A89FD1AC12E6C00514770 /* GHFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A89FC1AC12E6C00514770 /* GHFetcher.swift */; };
-		E29A89FF1AC1326600514770 /* NSDate+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A89FE1AC1326600514770 /* NSDate+JSON.swift */; };
+		E29A89FF1AC1326600514770 /* NSDateFormatter+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A89FE1AC1326600514770 /* NSDateFormatter+JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		E24EB6F51AC2638E00393151 /* GHInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHInteractor.swift; sourceTree = "<group>"; };
 		E29A89FA1AC12B1100514770 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		E29A89FC1AC12E6C00514770 /* GHFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHFetcher.swift; sourceTree = "<group>"; };
-		E29A89FE1AC1326600514770 /* NSDate+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+JSON.swift"; sourceTree = "<group>"; };
+		E29A89FE1AC1326600514770 /* NSDateFormatter+JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateFormatter+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 				E24EB6F51AC2638E00393151 /* GHInteractor.swift */,
 				E227BC5B1AC10DFF00EC096F /* GHEvent.swift */,
 				E29A89FC1AC12E6C00514770 /* GHFetcher.swift */,
-				E29A89FE1AC1326600514770 /* NSDate+JSON.swift */,
+				E29A89FE1AC1326600514770 /* NSDateFormatter+JSON.swift */,
 				E227BC5D1AC11C8C00EC096F /* Async.swift */,
 				E29A89FA1AC12B1100514770 /* Operators.swift */,
 				AB7512FC1ABF8CF70028A206 /* Images.xcassets */,
@@ -227,7 +227,7 @@
 				E29A89FB1AC12B1100514770 /* Operators.swift in Sources */,
 				E227BC5E1AC11C8C00EC096F /* Async.swift in Sources */,
 				E29A89FD1AC12E6C00514770 /* GHFetcher.swift in Sources */,
-				E29A89FF1AC1326600514770 /* NSDate+JSON.swift in Sources */,
+				E29A89FF1AC1326600514770 /* NSDateFormatter+JSON.swift in Sources */,
 				E227BC5C1AC10DFF00EC096F /* GHEvent.swift in Sources */,
 				E24EB6F61AC2638E00393151 /* GHInteractor.swift in Sources */,
 			);
