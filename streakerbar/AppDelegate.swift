@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
-        read_gitconfig()
+        readGitconfigFile()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         updateTitle(String(arc4random_uniform(10)))
     }
     
-    func read_gitconfig(){
+    func readGitconfigFile(){
         let path = "~/.gitconfig"
         let location = path.stringByExpandingTildeInPath
         let data: NSData? = NSData(contentsOfFile: location)
