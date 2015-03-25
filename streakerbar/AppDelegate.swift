@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         updateTitle(String(arc4random_uniform(10)))
     }
     
-    func readGitconfigFile(){
+    func readGitconfigFile() {
         let path = "~/.gitconfig"
         let location = path.stringByExpandingTildeInPath
         let data: NSData? = NSData(contentsOfFile: location)
