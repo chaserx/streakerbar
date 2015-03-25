@@ -38,7 +38,7 @@ struct GHEventFactory {
 				if let type = GHEventType(rawValue: typeString) {
 
 					if let createdDateString = object["created_at"] as? String {
-						if let createdDate = NSDate.dateWithJSONString(createdDateString) {
+						if let createdDate = NSDateFormatter.dateFromJSONString(createdDateString) {
 							
 							let repo = object["repo"] as? [String: AnyObject]
 							let repoName = repo?["name"] as? String || ""
