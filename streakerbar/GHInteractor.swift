@@ -26,14 +26,23 @@ struct GHInteractor {
 		return eventsForDate(NSDate())
 	}
 
+	func todaysEventsOfType(type: GHEventType) -> [GHEvent] {
+		return eventsForDate(NSDate(), type: type)
+	}
+
 	func eventsForDate(date: NSDate) -> [GHEvent] {
 		let events = allEvents()
 		return events.filter { datesAreOnSameDay(date, $0.createdDate) }
 	}
+
+	func eventsForDate(date: NSDate, type: GHEventType) -> [GHEvent] {
+		let events = allEvents()
+		return events.filter{ $0.type == type }.filter{ datesAreOnSameDay(date, $0.createdDate) }
+	}
 }
 
 
-private func datesAreOnSameDay(first: NSDate, second: NSDate) -> Bool {
+func datesAreOnSameDay(first: NSDate, second: NSDate) -> Bool {
 	let calendar = NSCalendar(calendarIdentifier: NSGregorianCalendar)!
 	let units: NSCalendarUnit = (.DayCalendarUnit | .MonthCalendarUnit | .YearCalendarUnit)
 	let firstDay = calendar.components(units, fromDate: first)
