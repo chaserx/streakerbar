@@ -18,7 +18,7 @@ struct GHInteractor {
 			events = GHEventFactory.eventsFromJSONResponse(eventData)
 			}.onFailure { error in
 				println(error)
-			}.start()
+            }.start() // fetches on main thread
 		return events
 	}
 

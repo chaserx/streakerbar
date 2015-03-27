@@ -31,9 +31,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         statusItem.image = icon
         statusItem.menu = statusMenu
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
+        updateTitle("?")
+//        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
         if let username = getGithubUsernameFromGitconfig() {
-            // TODO
+            updateStatusForUser(username)
+        } else {
+            //
         }
     }
 
@@ -44,7 +47,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func menuClicked(sender: NSMenuItem){
         NSApplication.sharedApplication().terminate(self)
     }
-    
+
+    func updateStatusForUser(username: String) {
+        let interactor = GHInteractor(username: username)
+        let events = interactor.todaysEventsOfType(GHEventType.Push)
+        updateTitle("\(events.count)")
+    }
+
     func updateTitle(title: String) {
         statusItem.title = title
     }
@@ -68,6 +77,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
         return nil
+    }
+
+    func promptForUsername() -> String? {
+        let alert = NSAlert()
+        alert.messageText = "Enter your GitHub username."
+        alert.addButtonWithTitle("Save")
+        alert.addButtonWithTitle("Cancel")
+
+        let field = NSTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 24))
+        alert.accessoryView = field
+
+        var username: String?
+        switch alert.runModal() {
+        case NSAlertDefaultReturn:
+            username = field.stringValue
+            if username == "" {
+                username = nil
+            }
+        default:
+            username = nil
+        }
+        return username
     }
     
     func listMatches(pattern: String, inString string: String) -> [String] {
