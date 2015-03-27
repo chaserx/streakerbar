@@ -32,7 +32,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
-        getGithubUsernameFromGitconfig()
+        if let username = getGithubUsernameFromGitconfig() {
+            // TODO
+        }
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -51,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         updateTitle(String(arc4random_uniform(10)))
     }
     
-    func getGithubUsernameFromGitconfig() -> String {
+    func getGithubUsernameFromGitconfig() -> String? {
         let path = "~/.gitconfig"
         let location = path.stringByExpandingTildeInPath
         let data: NSData? = NSData(contentsOfFile: location)
@@ -65,7 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 return username
             }
         }
-        return ""
+        return nil
     }
     
     func listMatches(pattern: String, inString string: String) -> [String] {
