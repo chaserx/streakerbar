@@ -35,8 +35,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
         if let username = getGithubUsernameFromGitconfig() {
             updateStatusForUser(username)
+        } else if let username = promptForUsername() {
+            updateStatusForUser(username)
         } else {
-            //
+            // :( 
         }
     }
 
