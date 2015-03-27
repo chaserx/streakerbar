@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
-        readGitconfigFile()
+        getGithubUsernameFromGitconfig()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         updateTitle(String(arc4random_uniform(10)))
     }
     
-    func readGitconfigFile() {
+    func getGithubUsernameFromGitconfig() -> String {
         let path = "~/.gitconfig"
         let location = path.stringByExpandingTildeInPath
         let data: NSData? = NSData(contentsOfFile: location)
@@ -59,9 +59,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let fileData = data {
             let content = NSString(data: fileData, encoding:NSUTF8StringEncoding) as String
             let matches = listMatches("user = \\w+", inString: content)
-            let username = replaceMatches("user = ", inString: matches[0], withString: "")
-            println(username) // ok, great, it returns an optional value Optional("chaserx")
+            // if let is kinda weird but otherwise get Optional("chaserx")
+            if let username = replaceMatches("user = ", inString: matches[0], withString: "") {
+                println(username)
+                return username
+            }
         }
+        return ""
     }
     
     func listMatches(pattern: String, inString string: String) -> [String] {
