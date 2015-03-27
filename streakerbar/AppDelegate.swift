@@ -32,6 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
+        getGithubUsernameFromGitconfig()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -48,6 +49,41 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func randShit() {
         updateTitle(String(arc4random_uniform(10)))
+    }
+    
+    func getGithubUsernameFromGitconfig() -> String? {
+        let path = "~/.gitconfig"
+        let location = path.stringByExpandingTildeInPath
+        let data: NSData? = NSData(contentsOfFile: location)
+        
+        if let fileData = data {
+            let content = NSString(data: fileData, encoding:NSUTF8StringEncoding) as String
+            let matches = listMatches("user = \\w+", inString: content)
+            // if let is kinda weird but otherwise get Optional("chaserx")
+            if let username = replaceMatches("user = ", inString: matches[0], withString: "") {
+                println(username)
+                return username
+            }
+        }
+        return ""
+    }
+    
+    func listMatches(pattern: String, inString string: String) -> [String] {
+        let regex = NSRegularExpression(pattern: pattern, options: .allZeros, error: nil)
+        let range = NSMakeRange(0, countElements(string))
+        let matches = regex?.matchesInString(string, options: .allZeros, range: range) as [NSTextCheckingResult]
+        
+        return matches.map {
+            let range = $0.range
+            return (string as NSString).substringWithRange(range)
+        }
+    }
+    
+    func replaceMatches(pattern: String, inString string: String, withString replacementString: String) -> String? {
+        let regex = NSRegularExpression(pattern: pattern, options: .allZeros, error: nil)
+        let range = NSMakeRange(0, countElements(string))
+        
+        return regex?.stringByReplacingMatchesInString(string, options: .allZeros, range: range, withTemplate: replacementString)
     }
     
 }
