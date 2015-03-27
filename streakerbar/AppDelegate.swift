@@ -58,8 +58,28 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         if let fileData = data {
             let content = NSString(data: fileData, encoding:NSUTF8StringEncoding) as String
-            println(content) // great, now how to grab github username?
+            let matches = listMatches("user = \\w+", inString: content)
+            let username = replaceMatches("user = ", inString: matches[0], withString: "")
+            println(username) // ok, great, it returns an optional value Optional("chaserx")
         }
+    }
+    
+    func listMatches(pattern: String, inString string: String) -> [String] {
+        let regex = NSRegularExpression(pattern: pattern, options: .allZeros, error: nil)
+        let range = NSMakeRange(0, countElements(string))
+        let matches = regex?.matchesInString(string, options: .allZeros, range: range) as [NSTextCheckingResult]
+        
+        return matches.map {
+            let range = $0.range
+            return (string as NSString).substringWithRange(range)
+        }
+    }
+    
+    func replaceMatches(pattern: String, inString string: String, withString replacementString: String) -> String? {
+        let regex = NSRegularExpression(pattern: pattern, options: .allZeros, error: nil)
+        let range = NSMakeRange(0, countElements(string))
+        
+        return regex?.stringByReplacingMatchesInString(string, options: .allZeros, range: range, withTemplate: replacementString)
     }
     
 }
