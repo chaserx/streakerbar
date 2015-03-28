@@ -4,15 +4,11 @@
 //
 //  Created by Chase Southard on 3/22/15.
 //  Copyright (c) 2015 Chase Southard. All rights reserved.
-//
+//  https://github.com/chaserx/streakerbar
 //
 // NEEDS:
-// - func: reads config possibly [github] from ~/.gitconfig or from NSUserDefaults
-// - func: pulls user contributions from https://github.com/users/:username/contributions
-// - func: parse HTML/XML/SVG data from the contributions svg; grab data for today; update display
 // - func: updates statusItem.title on interval using NSTimer or GCD's dispatch_after
-// inspiration: https://github.com/akerl/githubstats/blob/master/lib/githubstats.rb
-
+// Inspiration: https://github.com/akerl/githubstats/blob/master/lib/githubstats.rb
 
 
 import Cocoa
@@ -74,7 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let matches = listMatches("user = \\w+", inString: content)
             // if let is kinda weird but otherwise get Optional("chaserx")
             if let username = replaceMatches("user = ", inString: matches[0], withString: "") {
-                println(username)
+                // println(username)
                 return username
             }
         }
