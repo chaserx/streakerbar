@@ -1,4 +1,4 @@
-# streakerbar
+# streakerbar &hearts;
 
 A Mac OS X menubar app to track your open source contribution streak on GitHub.
 
