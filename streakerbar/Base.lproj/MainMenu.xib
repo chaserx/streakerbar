@@ -668,10 +668,16 @@
         </menu>
         <menu id="5IJ-OU-0Xw">
             <items>
+                <menuItem title="Refresh" id="5bd-tL-Arm">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="refreshMenuClicked:" target="Voe-Tx-rLC" id="8w5-Oo-gKn"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" id="xAv-8W-kwy">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="menuClicked:" target="Voe-Tx-rLC" id="jq7-0t-cP6"/>
+                        <action selector="quitMenuClicked:" target="Voe-Tx-rLC" id="PoA-E4-Lh7"/>
                     </connections>
                 </menuItem>
             </items>

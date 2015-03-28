@@ -29,21 +29,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = statusMenu
         updateTitle("?")
 //        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
-        if let username = getGithubUsernameFromGitconfig() {
-            updateStatusForUser(username)
-        } else if let username = promptForUsername() {
-            updateStatusForUser(username)
-        } else {
-            // :( 
-        }
+        refreshStreak()
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
     }
     
-    @IBAction func menuClicked(sender: NSMenuItem){
+    @IBAction func quitMenuClicked(sender: NSMenuItem){
         NSApplication.sharedApplication().terminate(self)
+    }
+    
+    @IBAction func refreshMenuClicked(sender: NSMenuItem){
+        refreshStreak()
+    }
+    
+    func refreshStreak() {
+        if let username = getGithubUsernameFromGitconfig() {
+            updateStatusForUser(username)
+        } else if let username = promptForUsername() {
+            updateStatusForUser(username)
+        } else {
+            // :(
+            updateTitle("!")
+        }
     }
 
     func updateStatusForUser(username: String) {
