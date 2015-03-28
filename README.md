@@ -21,9 +21,10 @@ Streakerbar app can read your `.gitconfig` assuming that it's in your home direc
 
 If you don't have this saved in your `.gitconfig`, it will ask you for your GitHub username.
 
-## Contriubtors
+## Authors 
 
 - Michael Bates (@mklbtz)
+- Chase Southard (@chaserx)
 
 ## Contributing
 
