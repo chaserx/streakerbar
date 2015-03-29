@@ -12,6 +12,12 @@ Note: Using XCode 6.3beta and Swift 1.2
 
 ![](streakerbar_light_theme.png)
 
+## Installation via Homebrew Cask
+
+1. `brew update`
+1. `brew install caskroom/cask/brew-cask` (if you haven't done so already)
+1. `brew cask install streakerbar`
+
 ## Setup
 
 Streakerbar app can read your `.gitconfig` assuming that it's in your home directory, `~/.gitconfig`, and configured thusly:
@@ -23,10 +29,15 @@ Streakerbar app can read your `.gitconfig` assuming that it's in your home direc
 
 If you don't have this saved in your `.gitconfig`, it will ask you for your GitHub username.
 
-## Authors 
+## Contributors
 
 - Michael Bates (@mklbtz)
 - Chase Southard (@chaserx)
+- Nick Warner (@nikolaiwarner)
+
+## Development
+
+Targeting Swift 1.2 via Xcode 6.3beta (March 29, 2015)
 
 ## Contributing
 
