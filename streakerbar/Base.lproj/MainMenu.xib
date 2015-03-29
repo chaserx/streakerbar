@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7519.1" systemVersion="14C1514" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7528.3" systemVersion="14C1510" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7519.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7528.3"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -675,6 +675,12 @@
                         <action selector="openUserProfileOnGithub:" target="Voe-Tx-rLC" id="WuA-cH-lL8"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Refresh" id="Zxz-zJ-euf">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="refresh:" target="Voe-Tx-rLC" id="m9V-wc-NGg"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Quit" id="xAv-8W-kwy">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -682,7 +688,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-47" y="333.5"/>
+            <point key="canvasLocation" x="-319.5" y="206.5"/>
         </menu>
     </objects>
 </document>

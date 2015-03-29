@@ -30,12 +30,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = statusMenu
         updateTitle("?")
 //        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
+        refreshStreak()
+    }
+
+    func refreshStreak() {
         if let username = getGithubUsernameFromGitconfig() {
             updateStatusForUser(username)
         } else if let username = promptForUsername() {
             updateStatusForUser(username)
         } else {
-            // :( 
+            // :(
+            updateTitle("!")
         }
     }
 
@@ -45,6 +50,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func quitApp(sender: NSMenuItem){
         NSApplication.sharedApplication().terminate(self)
+    }
+    
+    @IBAction func refresh(sender: NSMenuItem){
+        refreshStreak()
     }
     
     @IBAction func openUserProfileOnGithub(sender: NSMenuItem){
