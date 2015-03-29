@@ -2,6 +2,8 @@
 
 A Mac OS X menubar app to track your open source contribution streak on GitHub.
 
+Note: Using XCode 6.3beta and Swift 1.2
+
 ### Dark theme
 
 ![](streakerbar_dark_theme.png)
