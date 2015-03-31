@@ -29,8 +29,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         updateTitle("?")
-//        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("randShit"), userInfo: nil, repeats: true)
         refreshStreak()
+        var timer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("refreshStreak"), userInfo: nil, repeats: true)
     }
 
     func refreshStreak() {
@@ -73,10 +73,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func updateUsernameMenuItem(username: String) {
         usernameMenuItem.title = username
-    }
-    
-    func randShit() {
-        updateTitle(String(arc4random_uniform(10)))
     }
     
     func getGithubUsernameFromGitconfig() -> String? {
