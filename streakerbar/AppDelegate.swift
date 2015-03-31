@@ -30,7 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = statusMenu
         updateTitle("?")
         refreshStreak()
-        var timer = NSTimer.scheduledTimerWithTimeInterval(30, target: self, selector: Selector("refreshStreak"), userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: Selector("refreshStreak"), userInfo: nil, repeats: true)
     }
 
     func refreshStreak() {
