@@ -21,7 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var usernameMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(30.0) // use -1 for variable length but it seems to get cut off on the right.
-
+    let refreshRate = 300.0 //seconds
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         let icon = NSImage(named: "statusIcon")
         icon?.setTemplate(true)
@@ -30,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = statusMenu
         updateTitle("?")
         refreshStreak()
-        var timer = NSTimer.scheduledTimerWithTimeInterval(300, target: self, selector: Selector("refreshStreak"), userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(refreshRate, target: self, selector: Selector("refreshStreak"), userInfo: nil, repeats: true)
     }
 
     func refreshStreak() {
