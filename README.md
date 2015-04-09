@@ -2,7 +2,6 @@
 
 A Mac OS X menubar app to track your open source contribution streak on GitHub.
 
-Note: Using XCode 6.3beta and Swift 1.2
 
 ### Dark theme
 
@@ -37,7 +36,7 @@ If you don't have this saved in your `.gitconfig`, it will ask you for your GitH
 
 ## Development
 
-Targeting Swift 1.2 via Xcode 6.3beta (March 29, 2015)
+Targeting Swift 1.2 via Xcode 6.3
 
 ## Contributing
 
